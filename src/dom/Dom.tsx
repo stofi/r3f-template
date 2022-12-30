@@ -1,10 +1,10 @@
-import './App.css'
+import './Dom.css'
 
 import HelloWorld from './components/HelloWorld'
 
-function App() {
+function Dom() {
   return (
-    <div className='App'>
+    <div className='Dom'>
       <HelloWorld>
         <h1>Hello from React with TypeScript and Tailwind!</h1>
       </HelloWorld>
@@ -12,4 +12,4 @@ function App() {
   )
 }
 
-export default App
+export default Dom
