@@ -1,4 +1,4 @@
-import CustomMaterial from '../materials/CustomMaterial'
+import CustomMaterial from '$/materials/CustomMaterial'
 
 export default function Sphere(props: { color?: string }) {
   return (

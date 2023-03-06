@@ -6,6 +6,6 @@ const Keymap = {
   jump: 'jump',
 } as const
 
-export type TKeymap = typeof Keymap[keyof typeof Keymap]
+export type TKeymap = (typeof Keymap)[keyof typeof Keymap]
 
 export default Keymap

@@ -31,11 +31,12 @@ module.exports = {
     '@typescript-eslint',
     'prettier',
   ],
+  ignorePatterns: ['node_modules', 'dist', 'build', 'public/**/*'],
   rules: {
     'prettier/prettier': 'error',
     'react/react-in-jsx-scope': 'off',
     'react/no-unknown-property': 'off',
-    '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/no-unused-vars': 'error',
     'padding-line-between-statements': 'off',
     '@typescript-eslint/padding-line-between-statements': [
       'error',
@@ -70,6 +71,8 @@ module.exports = {
           ['^@?react'],
           // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
           ['^@?\\w'],
+          ['^\\$?\\w'],
+          ['^#?\\w'],
           // Absolute imports and other imports such as Vue-style `@/foo`.
           // Anything not matched in another group.
           ['^'],
@@ -82,5 +85,6 @@ module.exports = {
     'simple-import-sort/exports': 'error',
     '@typescript-eslint/no-explicit-any': 'warn',
     '@typescript-eslint/ban-ts-comment': 'warn',
+    'no-restricted-imports': ['error', { patterns: ['../*'] }],
   },
 }

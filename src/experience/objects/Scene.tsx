@@ -2,7 +2,7 @@ import { Environment, OrbitControls } from '@react-three/drei'
 
 import { useControls } from 'leva'
 
-import Sphere from './Sphere'
+import Sphere from '#/Sphere'
 
 export default function Scene() {
   const { sphereColor, floorColor } = useControls({

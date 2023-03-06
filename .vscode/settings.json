@@ -2,5 +2,14 @@
   "nuxt.isNuxtApp": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
-  }
+  },
+  "files.exclude": {
+    "**/node_modules": true,
+    "dist": true,
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "dist": true,
+  },
+  "prettier.enable": false,
 }

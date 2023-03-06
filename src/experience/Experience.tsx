@@ -1,4 +1,4 @@
-import { Suspense, useState } from 'react'
+import { Suspense } from 'react'
 
 import { PerformanceMonitor } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
@@ -7,7 +7,7 @@ import { Debug, Physics } from '@react-three/rapier'
 import { Leva } from 'leva'
 import { Perf } from 'r3f-perf'
 
-import Scene from './objets/Scene'
+import Scene from '#/Scene'
 
 export default function Experience(props: { enableDebug?: boolean }) {
   return (

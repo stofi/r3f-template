@@ -1,14 +1,14 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import * as THREE from 'three'
 import CustomShaderMaterial from 'three-custom-shader-material'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useRef } from 'react'
 
-import { useTexture } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 
 import { useControls } from 'leva'
 
-import fragmentShader from '../shaders/example/fragment.glsl'
-import vertexShader from '../shaders/example/vertex.glsl'
+import fragmentShader from './shaders/fragment.glsl'
+import vertexShader from './shaders/vertex.glsl'
 
 const textures = [
   './textures/snow/albedo.jpg',

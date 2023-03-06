@@ -6,8 +6,9 @@ import ReactDOM from 'react-dom/client'
 
 import { KeyboardControls, KeyboardControlsEntry } from '@react-three/drei'
 
+import Experience from '$/Experience'
+
 import Dom from './dom/Dom'
-import Experience from './experience/Experience'
 import type { TKeymap } from './keymap'
 import Keymap from './keymap'
 
