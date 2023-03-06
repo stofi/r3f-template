@@ -9,10 +9,11 @@ This is a template for creating a React app with TypeScript, Tailwind CSS, and V
    ```
 2. Install dependencies:
    ```sh
-    yarn install
+    pnpm i
     ```
 3. Start the development server:
     ```sh
-    yarn dev
+    pnpm run dev
     ```
 4. Open [http://localhost:8420](http://localhost:8420) with your browser to see the result.
+
