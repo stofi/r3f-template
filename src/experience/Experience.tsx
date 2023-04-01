@@ -8,6 +8,7 @@ import { Leva } from 'leva'
 import { Perf } from 'r3f-perf'
 
 import Scene from '#/Scene'
+import Effects from '$/Effects'
 
 export default function Experience(props: { enableDebug?: boolean }) {
   return (
@@ -32,6 +33,7 @@ export default function Experience(props: { enableDebug?: boolean }) {
         <Suspense>
           <Physics>
             {props.enableDebug && <Debug />}
+            <Effects />
             <Scene />
           </Physics>
         </Suspense>
