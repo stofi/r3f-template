@@ -28,8 +28,8 @@ export default function Portal() {
     if (!screenMesh.current) return
     const material = screenMesh.current.material as THREE.ShaderMaterial
     if (!material) return
-    const scene1 = portal1.current.scene
-    const scene2 = portal2.current.scene
+    const scene1 = portal1.current.getScene()
+    const scene2 = portal2.current.getScene()
     if (!scene1 || !scene2) return
     gl.setRenderTarget(renderTarget1)
     gl.render(scene1, camera)
