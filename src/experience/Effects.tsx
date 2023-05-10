@@ -17,11 +17,6 @@ export default function Effects() {
     enableNoise,
     enableVignette,
     enableCustomEffect,
-    luminanceSmoothing,
-    luminanceThreshold,
-    intensity,
-    levels,
-    radius,
   } = useControls('Effects', {
     enableBloom: {
       value: false,
@@ -80,27 +75,18 @@ export default function Effects() {
     <EffectComposer>
       {
         (enableDepthOfField && (
-          <DepthOfField
-            // worldFocusDistance={10}
-            focalLength={0.02}
-            bokehScale={20}
-            height={1024}
-          />
+          <DepthOfField focalLength={0.02} bokehScale={20} height={1024} />
         )) as JSX.Element
       }
+      {(enableBloom && <Bloom blendFunction={2} />) as JSX.Element}
       {
-        (enableBloom && (
-          <Bloom
-            luminanceSmoothing={luminanceSmoothing}
-            luminanceThreshold={luminanceThreshold}
-            intensity={intensity}
-            levels={levels}
-            radius={radius}
-            height={1024}
+        (enableNoise && (
+          <Noise
+            blendFunction={2}
+            // opacity={0.015}
           />
         )) as JSX.Element
       }
-      {(enableNoise && <Noise opacity={0.015} />) as JSX.Element}
       {
         (enableVignette && (
           <Vignette eskil={false} offset={0.1} darkness={0.8} />

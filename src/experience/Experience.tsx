@@ -2,7 +2,7 @@ import { Suspense } from 'react'
 
 import { PerformanceMonitor } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
-import { Debug, Physics } from '@react-three/rapier'
+import { Physics } from '@react-three/rapier'
 
 import { Leva } from 'leva'
 import { Perf } from 'r3f-perf'
@@ -32,7 +32,6 @@ export default function Experience(props: { enableDebug?: boolean }) {
         )}
         <Suspense>
           <Physics>
-            {props.enableDebug && <Debug />}
             <Effects />
             <Scene />
           </Physics>
