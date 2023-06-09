@@ -1,3 +1,5 @@
+import { useEffect, useMemo } from 'react'
+
 import {
   Bloom,
   DepthOfField,
@@ -71,28 +73,40 @@ export default function Effects() {
     },
   })
 
-  return (
+  const anyEffectEnabled = useMemo(
+    () =>
+      enableBloom ||
+      enableDepthOfField ||
+      enableNoise ||
+      enableVignette ||
+      enableCustomEffect,
+    [enableBloom, enableDepthOfField, enableNoise, enableVignette],
+  )
+
+  return anyEffectEnabled ? (
     <EffectComposer>
-      {
-        (enableDepthOfField && (
-          <DepthOfField focalLength={0.02} bokehScale={20} height={1024} />
-        )) as JSX.Element
-      }
-      {(enableBloom && <Bloom blendFunction={2} />) as JSX.Element}
-      {
-        (enableNoise && (
-          <Noise
-            blendFunction={2}
-            // opacity={0.015}
-          />
-        )) as JSX.Element
-      }
-      {
-        (enableVignette && (
-          <Vignette eskil={false} offset={0.1} darkness={0.8} />
-        )) as JSX.Element
-      }
-      {(enableCustomEffect && <CustomEffect param={0.1} />) as JSX.Element}
+      {enableDepthOfField ? (
+        <DepthOfField focalLength={0.02} bokehScale={20} height={1024} />
+      ) : (
+        <></>
+      )}
+      {enableBloom ? <Bloom blendFunction={2} /> : <></>}
+      {enableNoise ? (
+        <Noise
+          blendFunction={2}
+          // opacity={0.015}
+        />
+      ) : (
+        <></>
+      )}
+      {enableVignette ? (
+        <Vignette eskil={false} offset={0.1} darkness={0.8} />
+      ) : (
+        <></>
+      )}
+      {enableCustomEffect ? <CustomEffect param={0.1} /> : <> </>}
     </EffectComposer>
+  ) : (
+    <> </>
   )
 }
